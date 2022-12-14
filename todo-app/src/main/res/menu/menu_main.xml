@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_categories"
+        android:orderInCategory="100"
+        android:title="Categories"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_delete_all_categories"
+        android:orderInCategory="101"
+        android:title="Delete All Categories"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_delete_all_notes"
+        android:orderInCategory="102"
+        android:title="Delete All Notes"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_test_categories"
+        android:orderInCategory="103"
+        android:title="Test Create Categories"
+        app:showAsAction="never"/>
+    <item
+        android:id="@+id/action_test_notes"
+        android:orderInCategory="104"
+        android:title="Test Create Notes"
+        app:showAsAction="never"/>
+</menu>

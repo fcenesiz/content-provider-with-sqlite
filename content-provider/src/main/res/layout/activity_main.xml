@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="4dp"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etNameToAdd"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="name to add"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonAdd"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="Add"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etIdToShow"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="id to show"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonFind"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="FIND"
+            android:layout_margin="4dp"/>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/etNameToRemove"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="name to remove"
+            android:layout_margin="4dp"/>
+
+        <Button
+            android:id="@+id/buttonRemove"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="REMOVE"
+            android:layout_margin="4dp"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonShowAllPersons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Show All Persons"
+        android:layout_gravity="center"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="All Persons" />
+
+    <ListView
+        android:id="@+id/listViewPersons"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"/>
+
+
+</LinearLayout>
