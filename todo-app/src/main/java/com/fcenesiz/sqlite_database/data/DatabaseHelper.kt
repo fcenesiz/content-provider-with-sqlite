@@ -55,6 +55,11 @@ class DatabaseHelper(
         db?.execSQL(TABLE_NOTES_CREATE)
     }
 
+    // should enable to use foreign key
+    override fun onConfigure(db: SQLiteDatabase?) {
+        db?.setForeignKeyConstraintsEnabled(true)
+    }
+
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         db?.execSQL(DROP_TABLE_CATEGORIES)
         db?.execSQL(DROP_TABLE_NOTES)

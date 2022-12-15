@@ -58,6 +58,7 @@ class TodoContentProvider : ContentProvider() {
                     selectionArgs,
                     null, null, null
                 )
+                cursor.setNotificationUri(context?.contentResolver, uri)
                 return cursor
             }
             ToDoContract.Category.CONTENT_URI_CODE -> {
@@ -68,6 +69,8 @@ class TodoContentProvider : ContentProvider() {
                     selectionArgs,
                     null, null, null
                 )
+                // sends an notification
+                cursor.setNotificationUri(context?.contentResolver, uri)
                 return cursor
             }
             else -> throw java.lang.IllegalArgumentException("QUERY: UNKNOWN URI: $uri")
@@ -120,6 +123,8 @@ class TodoContentProvider : ContentProvider() {
             Log.i(TAG, "INSERT ERROR:$uri")
             return null
         }
+        // receives notifications
+        context?.contentResolver?.notifyChange(uri, null)
         return ContentUris.withAppendedId(uri, id)
     }
 
@@ -132,7 +137,11 @@ class TodoContentProvider : ContentProvider() {
         args: Array<out String>?
     ): Int {
         val id = db.update(tableName, values, selection, args)
-        return if (id >= 0) id else {
+        return if (id >= 0) {
+            // receives notifications
+            context?.contentResolver?.notifyChange(uri, null)
+            id
+        } else {
             Log.i(TAG, "updateEntry: Error, uri:$uri")
             -1
         }
@@ -143,7 +152,11 @@ class TodoContentProvider : ContentProvider() {
                              selection: String?,
                              args: Array<out String>?): Int{
         val id = db.delete(tableName, selection, args)
-        return if (id >= 0) id else{
+        return if (id >= 0) {
+            // receives notifications
+            context?.contentResolver?.notifyChange(uri, null)
+            id
+        } else{
             Log.i(TAG, "deleteEntry: Error, uri:$uri")
             -1
         }
