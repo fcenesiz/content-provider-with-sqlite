@@ -56,7 +56,7 @@ class TodoContentProvider : ContentProvider() {
                     projection,
                     selection,
                     selectionArgs,
-                    null, null, null
+                    null, null, orderBy
                 )
                 cursor.setNotificationUri(context?.contentResolver, uri)
                 return cursor
@@ -67,7 +67,7 @@ class TodoContentProvider : ContentProvider() {
                     projection,
                     selection,
                     selectionArgs,
-                    null, null, null
+                    null, null, orderBy
                 )
                 // sends an notification
                 cursor.setNotificationUri(context?.contentResolver, uri)
